@@ -1,6 +1,6 @@
 React dropbox saver
 ============
-Simple react wrapper for [Dropbox Chooser API](https://www.dropbox.com/developers/saver)
+Simple react wrapper for [Dropbox saver API](https://www.dropbox.com/developers/saver)
 
 Installation 
 ============
