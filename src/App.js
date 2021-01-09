@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+import DropboxSaver  from './component/saver'
 function App() {
+
+  let files =[{
+    url: 'https://bloodhound-staging.s3.us-east-2.amazonaws.com/5ef9a2324792584d3a611a21/AS-Co-1000/20.jpg', 
+    filename: 'asdf.jpg'
+  }]
+  const APP_KEY = "fghhg34gsfsf"
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div align="center" >
+     <DropboxSaver  
+        files={files}
+        appKey={APP_KEY}
+        success={files => console.log('files:', files)}
+        cancel={() => console.log('closed')}
+        progress={(progress)=>console.log("progress",progress)} 
+        error={(err)=>console.log("error",err)}
+     >
+     </DropboxSaver>
     </div>
   );
 }
